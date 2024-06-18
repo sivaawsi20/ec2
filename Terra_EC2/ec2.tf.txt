@@ -1,0 +1,12 @@
+resource "aws_instance" "test-server" {
+  ami           = "ami-0a850a7b67b1d334a"
+  instance_type = "t2.micro"
+  key_name = "sivakey"
+  security_groups = ["test-sg"]
+
+  tags = {
+    Name = "WEB"
+    Env = "PROD"
+    User = "SIVA"
+  }
+}
